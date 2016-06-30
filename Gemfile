@@ -20,7 +20,7 @@ gem 'bower-rails'
 
 group :development, :test do
   gem 'byebug'
-  gem 'teaspoon', git: 'git:/github.com/modeset/teaspoon.git'
+  gem 'teaspoon', git: 'git://github.com/modeset/teaspoon.git'
   gem 'teaspoon-jasmine'
   gem 'rspec'
   gem 'rspec-rails', '~> 2.0'
