@@ -1,3 +1,3 @@
-Rails.application.routes.draw do
+Jewels::Application.routes.draw do
   root 'home#index'
 end
