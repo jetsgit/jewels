@@ -12,6 +12,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # adding for assets pipeline and AngularJS
 gem 'angular-rails-templates'
 
+# adding because respond_to put in a gem
+gem 'responders', '~> 2.0'
+
+
 #adding for managing assets
 gem 'bower-rails'
 
