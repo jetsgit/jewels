@@ -1,2 +1,2 @@
-jewels = angular.module('jewels', [
+jewels = angular.module('jewels', ['ui.router', 'templates'
 ])
