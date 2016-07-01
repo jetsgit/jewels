@@ -5,5 +5,5 @@ Jewels::Application.routes.draw do
       resources :jewels, only: [:index, :create, :update, :edit, :show]
     end
   end
-  root 'home#index'
+  root 'home#angular'
 end
