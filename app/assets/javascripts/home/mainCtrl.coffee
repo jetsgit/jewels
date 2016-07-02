@@ -1,4 +1,4 @@
 angular.module('jewelsStore').controller('MainCtrl',[
-  '$scope', 'jewels', ($scope, jewels) ->
+  '$scope',  ($scope) ->
     $scope.test = 'Hello world'
 ])
