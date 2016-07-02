@@ -1,0 +1,38 @@
+<header>
+  <h1 class="text-center">Jewels by Jerry</h1>
+  <h2 class="text-center">- a Langley Store</h2>
+</header>
+
+<!-- Products Container -->
+<div class="list-group">
+
+  <!-- Prouduct Container -->
+  <!-- <div class="list-group-item" ng-repeat="product in store.products | orderBy:'-price'"> -->
+  <div ui-view="jewels"></div>
+
+    <!-- $index Practice: -->
+    <h3>
+      <!-- Gem #{{$index + 1}}: {{product.name | uppercase}}<em class="pull-right">{{product.price | currency}}</em> -->
+    </h3>
+
+    <!-- Image Gallery -->
+    
+    <!-- <section class="row"> -->
+    <!--   <div class="col-md-1" ng-show="product.images.length" ng-controller="GalleryController as gallery"> -->
+    <!--     <ul class="img-thumbnails clearfix"> -->
+    <!--       <li class="small-image pull-left thumbnail" ng-repeat="image in product.images"> -->
+    <!--         <img ng-src="{{image}}"> -->
+    <!--       </li> -->
+    <!--     </ul> -->
+    <!--   </div> -->
+    <!-- </section> -->
+    <!-- <section class="row"> -->
+    <!--   <div ng-controller="StoreController"> -->
+    <!--     <reviews></reviews> -->
+    <!--   </div> -->
+    <!-- </section> -->
+
+    <!-- Product Tabs -->
+    <!-- <product-tabs></product-tabs> -->
+  </div>
+</div>
