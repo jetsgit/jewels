@@ -5,6 +5,6 @@ angular.module('jewelsStore')
       #   console.log jewels
       # jewels = Jewel.query ->
       #   console.log $scope.jewels
-      $scope.jewels = jewelsResource.query()
+      this.jewels = jewelsResource.query()
       console.log $scope.jewels
   ])
