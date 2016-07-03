@@ -7,12 +7,6 @@ jewelsStore.config( ($stateProvider, $urlRouterProvider) ->
         templateUrl: 'home/home.html'
       'jewels@home':
         templateUrl: 'jewels/jewels.html'
-        # resolve:
-        #   jewelsResource: 'jewelsResource'
-        #   jewels: (jewelsResource) ->
-        #     return jewelsResource.query().$promise
-        # controller: 'jewelsCtrl'
-        
   )
   $stateProvider.state("jewels" ,
     url: "/jewels"
@@ -25,12 +19,3 @@ jewelsStore.config( ($stateProvider, $urlRouterProvider) ->
   )
   $urlRouterProvider.otherwise '/'
 )
-
-# jewelsStore.controller('MainCtrl',[
-#   '$scope', 'jewels', ($scope, jewels) ->
-#     $scope.test = 'Hello world'
-# ])
-
-
-
-
