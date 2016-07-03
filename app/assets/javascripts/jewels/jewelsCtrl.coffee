@@ -1,5 +1,5 @@
 angular.module('jewelsStore')
-  .controller('jewelsCtrl', [
+  .controller('JewelsCtrl', [
     '$scope', 'jewelsResource', ($scope, jewelsResource) ->
       # jewel = Jewel.get id: $scope.id, ->
       #   console.log jewels

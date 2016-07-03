@@ -11,7 +11,7 @@ jewelsStore.config( ($stateProvider, $urlRouterProvider) ->
   $stateProvider.state("jewels" ,
     url: "/jewels"
     templateUrl: 'jewels/jewels.html'
-    controller: 'jewelsCtrl'
+    controller: 'JewelsCtrl'
     resolve:
       jewelsResource: 'jewelsResource'
       jewels: (jewelsResource) ->
