@@ -1,4 +1,4 @@
-<div ng-controller="MainCtrl">
+<div >
   <header>
     <h1 class="text-center">Jewels by Jerry</h1>
     <h2 class="text-center">- a Langley Store</h2>
@@ -10,7 +10,8 @@
     Here are our favorite Gems.
   </h3>
   <div class="list-group">
-      <div ui-view="jewels"></div>
+    <div class="list-group-item" ng-repeat="jewel in store.jewels | orderBy: '-price'"></div>
+      <!-- <div ui-view="jewels"></div> -->
   
     </div>
   </div>
