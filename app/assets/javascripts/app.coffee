@@ -1,6 +1,5 @@
 jewelsStore = angular.module('jewelsStore', ['templates','ui.router'])
 jewelsStore.config( ($stateProvider, $urlRouterProvider) ->
-  $urlRouterProvider.otherwise '/'
   $stateProvider
     .state('home',
       url: '/'
@@ -13,7 +12,14 @@ jewelsStore.config( ($stateProvider, $urlRouterProvider) ->
             jewels: (jewelsResource) ->
               return jewelsResource.query().$promise
           controller: 'jewelsCtrl'
+    ).state("jewels",
+      url: "/jewels"
+      resolve:
+        jewelsResource: 'jewelsResource'
+        jewels: (jewelsResource) ->
+          return jewelsResource.query().$promise
     )
+  $urlRouterProvider.otherwise '/'
 )
 
 # jewelsStore.controller('MainCtrl',[
