@@ -7,6 +7,9 @@ jewelsStore.config( ($stateProvider, $urlRouterProvider) ->
         templateUrl: 'home/home.html'
       'jewels@home':
         templateUrl: 'jewels/jewels.html'
+      'gallery@home': 
+        templateUrl: 'gallery/gallery.html'
+        
   )
   $stateProvider.state("jewels" ,
     url: "/jewels"
