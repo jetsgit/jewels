@@ -1,0 +1,14 @@
+<div ng-controller="JewelsCtrl as store">
+  <section class="row" ng-repeat="jewel in store.jewels>
+    <div class="col-md-1" ng-show="jewel.images.length" >
+      <ul class="img-thumbnails clearfix">
+        <li class="small-image pull-left thumbnail" ng-repeat="image in jewel.images">
+          < img ng-src="{{image.name}}" />
+        </li>
+      </ul>
+    </div>
+  </section>
+  <div>
+    <p>I'm inside Gallery View, Ya-Hooooooooo!</p>
+  </div>
+</div>
