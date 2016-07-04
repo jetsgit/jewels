@@ -16,3 +16,6 @@
 *.swo
 *.swp
 .pow
+.DS_Store
+tags
+.byebug*
