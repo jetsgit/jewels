@@ -4,7 +4,7 @@ module Api
       before_action :set_jewel, only: [:show, :edit,:update, :destroy]
       respond_to :json
       def index
-        respond_with  Jewel.all.to_json, content_type: 'application/flatlander; v=1'
+        respond_with  Jewel.all.to_json(include: :images), content_type: 'application/flatlander; v=1'
       end
 
       private
