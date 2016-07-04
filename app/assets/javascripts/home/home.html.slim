@@ -1,0 +1,14 @@
+header
+  h1.text-center Jewels by Jerry
+  h2.text-center  
+    |
+      -a Langley Store
+
+<!-- Products Container -->
+ 
+h3.text-center
+  Here are our favorite Gems.
+.list-group ng-controller="JewelsCtrl as store"
+  .list-group-item ng-repeat="jewel in store.jewels | orderBy: '-price'"
+    h3 Gem &#35;{{$index + 1}}: {{jewel.name | uppercase}}<em class="pull-right"> {{jewel.price | currency}}</em>
+    div ui-view="gallery"
