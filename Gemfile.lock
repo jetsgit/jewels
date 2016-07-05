@@ -108,6 +108,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.9.0)
     multi_json (1.12.1)
+    ng-rails-csrf (0.1.0)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -241,6 +242,7 @@ DEPENDENCIES
   factory_girl_rails (~> 4.0)
   jbuilder (~> 2.0)
   jquery-rails
+  ng-rails-csrf
   pg (~> 0.15)
   poltergeist
   pry-byebug

@@ -1,4 +1,4 @@
-jewelsStore = angular.module('jewelsStore', ['ngResource', 'templates','ui.router'])
+jewelsStore = angular.module('jewelsStore', ['ngResource', 'templates','ui.router', 'ng-rails-csrf'])
 jewelsStore.config( ($stateProvider, $urlRouterProvider, $locationProvider) -> #$locationProvider here could create problems
   $stateProvider.state('home',
     url: '/'
