@@ -1,10 +1,11 @@
 jewelsStore = angular.module('jewelsStore', ['ngResource', 'templates','ui.router'])
-jewelsStore.config( ($stateProvider, $urlRouterProvider) -> #$locationProvider here could create problems
+jewelsStore.config( ($stateProvider, $urlRouterProvider, $locationProvider) -> #$locationProvider here could create problems
   $stateProvider.state('home',
     url: '/'
     views:
       '':
         templateUrl: 'home/home.html'
+        controller: 'MainCtrl'
       'jewels@home':
         templateUrl: 'jewels/jewels.html'
       'gallery@home':
@@ -27,6 +28,6 @@ jewelsStore.config( ($stateProvider, $urlRouterProvider) -> #$locationProvider h
       jewels: (jewelsResource) ->
         return jewelsResource.query().$promise
   )
+  $locationProvider.html5Mode(true)  #this could create problems
   $urlRouterProvider.otherwise '/'
-  #$locationProvider.html5Mode true  #this could create problems
 )

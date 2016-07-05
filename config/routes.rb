@@ -6,4 +6,5 @@ Jewels::Application.routes.draw do
     end
   end
   root 'home#angular'
+  get '*path' =>  'home#angular'
 end
