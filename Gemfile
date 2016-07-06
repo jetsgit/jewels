@@ -1,4 +1,10 @@
 source 'https://rubygems.org'
+
+# Handle Bower assets with Rails-Assets
+source 'https://rails-assets.org' do
+  gem 'rails-assets-restangular'
+end
+
 gem 'rails', '4.2.6'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'
