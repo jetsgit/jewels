@@ -6,5 +6,6 @@ Jewels::Application.routes.draw do
     end
   end
   root 'home#angular'
+  # below line enables angularjs to not have '#' in URL
   get '*path' =>  'home#angular'
 end
