@@ -1,5 +1,6 @@
-jewelsStore = angular.module('jewelsStore', ['ngResource', 'templates','ui.router', 'ng-rails-csrf'])
-jewelsStore.config( ($stateProvider, $urlRouterProvider, $locationProvider) -> #$locationProvider here could create problems
+jewelsStore = angular.module('jewelsStore', ['templates','ui.router', 'ng-rails-csrf', 'restangular'])
+jewelsStore.config(['RestangularProvider', '$stateProvider', '$urlRouterProvider', '$locationProvider', (RestangularProvider, $stateProvider, $urlRouterProvider, $locationProvider) -> #$locationProvider here could create problems
+  RestangularProvider.setBaseUrl '/api'
   $stateProvider.state('home',
     url: '/'
     views:
@@ -12,22 +13,19 @@ jewelsStore.config( ($stateProvider, $urlRouterProvider, $locationProvider) -> #
         templateUrl: 'gallery/gallery.html'
         controller: 'JewelsCtrl'
         resolve:
-          jewelsResource: 'jewelsResource'
-          jewels: (jewelsResource) ->
-            return jewelsResource.query().$promise
-      # 'reviewsForm':
-      #   templateUrl: 'reviews/reviewsForm.html'
-        
+          jewels: ['Jewels', (Jewels) ->
+            return Jewels.getAll()
+          ]
   )
   $stateProvider.state("jewels" ,
     url: "/jewels"
     templateUrl: 'jewels/jewels.html'
     controller: 'JewelsCtrl'
     resolve:
-      jewelsResource: 'jewelsResource'
-      jewels: (jewelsResource) ->
-        return jewelsResource.query().$promise
+      jewels: ['Jewels', (Jewels) ->
+        return Jewels.getAll()
+      ]
   )
   $locationProvider.html5Mode(true)  #this could create problems
   $urlRouterProvider.otherwise '/'
-)
+])

@@ -1,6 +1,8 @@
 angular.module('jewelsStore')
-  .factory('jewelsResource', ['$resource', ($resource) ->
-    return $resource '/api/jewels/:jewelId',
-      jewelid: '@id'
-      format: 'json'
+  .factory('Jewels', ['Restangular', (Restangular) ->
+    return
+      # RestangularProvider.setBaseUrl '/api'
+      getAll: Restangular.all('jewels').getList()
+      getOne:  (jewelsId) ->
+        return Restangular.one('jewels', jewelsId).get()
   ])
