@@ -1,5 +1,5 @@
 angular.module('jewelsStore')
-  .factory('Jewels', ['Restangular', (Restangular) ->
+  .factory('JewelsResource', ['Restangular', (Restangular) ->
       getAll: ->
         Restangular.all('jewels').getList()
       getOne:  (jewelsId) ->
