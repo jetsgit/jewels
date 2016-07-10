@@ -10,9 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require restangular
-//= require lodash
 //= require angular/angular
+//= require lodash
+//= require restangular
 //= require ng-rails-csrf
 //= require jquery
 //= require jquery_ujs
