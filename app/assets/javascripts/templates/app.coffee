@@ -8,14 +8,12 @@ jewelsStore.config(['RestangularProvider', '$stateProvider', '$urlRouterProvider
       '':
         templateUrl: 'home/home.html'
         controller: 'MainCtrl'
-      'jewels@home':
-        templateUrl: 'jewels/jewels.html'
       'gallery@home':
         templateUrl: 'gallery/gallery.html'
         controller: 'JewelsCtrl'
         resolve:
           jewels: (JewelsResource) ->
-            JewelsResource.getAll('jewels')
+            JewelsResource.getAll().$object
   )
   $stateProvider.state("jewels",
     url: "/jewels"
@@ -23,7 +21,7 @@ jewelsStore.config(['RestangularProvider', '$stateProvider', '$urlRouterProvider
     controller: 'JewelsCtrl'
     resolve:
       jewels: (JewelsResource) ->
-        return JewelsResource.getAll('jewels')
+        return JewelsResource.getAll()
   )
   $locationProvider.html5Mode(true)
   $urlRouterProvider.otherwise '/'
