@@ -14,6 +14,9 @@ jewelsStore.config(['RestangularProvider', '$stateProvider', '$urlRouterProvider
         resolve:
           jewels: (JewelsResource) ->
             JewelsResource.getAll().$object
+      'reviewsForm@home':
+        templateUrl: 'reviews/reviewsForm.html'
+        controller: 'JewelsCtrl'
   )
   $stateProvider.state("jewels",
     url: "/jewels"
