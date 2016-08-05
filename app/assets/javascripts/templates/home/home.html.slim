@@ -13,3 +13,4 @@ h3.text-center
   .list-group-item ng-repeat="jewel in store.jewels | orderBy: '-price'"
     h3 Gem &#35;{{$index + 1}}: {{jewel.name | uppercase}}<em class="pull-right"> {{jewel.price | currency}}</em>
     div ui-view="gallery"
+    div ui-view="reviewsForm"
