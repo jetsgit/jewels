@@ -3,7 +3,6 @@ module Api
     class ReviewsController < ApplicationController
 
       def create
-        byebug
         @review = Review.new(review_params)
         @jewel = Jewel.find(params[:jewel_id])
         @jewel.reviews << @review
