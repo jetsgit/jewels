@@ -1,21 +1,21 @@
 <section class="row">
   <h2 class="text-center col-md6">Reviews</h2>
-  <form class="form-horizontal edit-user" role="form" name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
+  <form class="form-horizontal edit-user" role="form" name="reviewForm" ng-controller="ReviewsCtrl" ng-submit="ReviewsCtrl.addReview(product)">
     <blockquote>
       <div>
-        <b>Stars: {{reviewCtrl.review.stars}}</b>
+        <b>Stars: {{ReviewsCtrl.review.stars}}</b>
       </div>
       <div>
-        {{reviewCtrl.review.body}}
+        {{ReviewsCtrl.review.body}}
       </div>
       <div>
-        <cite>by: {{reviewCtrl.review.author}}</cite>
+        <cite>by: {{ReviewsCtrl.review.author}}</cite>
       </div>
     </blockquote>
     <div class="form-group">
       <label class="col-md-2 control-label col-md-offset-2"for="stars">Rating</label>
       <div class="col-md-5">
-        <select class="form-control input-medium" ng-model="reviewCtrl.review.stars" ng-options="stars for stars in [5,4,3,2,1]">
+        <select class="form-control input-medium" ng-model="ReviewsCtrl.review.stars" ng-options="stars for stars in [5,4,3,2,1]">
           <option value="">Your Gem Rating</option>
         </select>
       </div>
