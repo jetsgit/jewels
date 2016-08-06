@@ -1,6 +1,10 @@
 angular.module('jewelsStore')
-  .controller('JewelsCtrl', [ "JewelsResource", '$scope', (JewelsResource, $scope) ->
+  .controller('JewelsCtrl', [ "JewelsResource", 'Restangular', '$scope', (JewelsResource, Restangular, $scope) ->
     this.jewels = JewelsResource.getAll()
-    $scope.inside = "My own private scope!"
+    this.review = {}
+    this.addReview = (jewel) ->
+      jewel.reviews = JewelsResource.reviewRestangular(jewel)
+      jewel.reviews.push(this.review)
+      jewel.reviews.post()
     return
   ])
