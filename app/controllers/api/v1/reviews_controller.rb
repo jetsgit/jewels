@@ -6,12 +6,14 @@ module Api
         @review = Review.new(review_params)
         @jewel = Jewel.find(params[:jewel_id])
         @jewel.reviews << @review
+        render nothing: true
       end
 
       def update
         @review = Review.new(review_params)
         @jewel = Jewel.find(params[:jewel_id])
         @jewel.reviews << @review
+        render nothing: true
       end
 
 
