@@ -5,8 +5,10 @@ section.row
   ul
     li[ng-repeat="review in jewel.reviews"]
       blockquote
-        strong | {{review.stars}} Stars
-          {{review.body}}
+        strong 
+          | 
+            {{review.stars}} Stars<br>
+            {{review.body}}
         cite.clearfix —{{review.author}}
   form.form-horizontal.edit-user[ role="form" name="reviewForm" ng-controller="JewelsCtrl as reviewCtrl" ng-submit="reviewCtrl.addReview(jewel)" ]
     blockquote
