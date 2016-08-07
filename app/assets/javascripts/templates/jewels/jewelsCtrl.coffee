@@ -5,5 +5,8 @@ angular.module('jewelsStore')
     this.addReview = (jewel) ->
       jewel.reviews = JewelsResource.reviewRestangular(jewel)
       jewel.reviews.post('',{review: this.review})
+      this.review.stars = ""
+      this.review.author = ""
+      this.review.body = ""
     return
   ])
