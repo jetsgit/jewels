@@ -10,7 +10,7 @@ section.row
             {{review.stars}} Stars<br>
             {{review.body}}
         cite.clearfix —{{review.author}}
-  form.form-horizontal.edit-user[ role="form" name="reviewForm" ng-controller="JewelsCtrl as reviewCtrl" ng-submit="reviewCtrl.addReview(jewel)" ]
+  form.form-horizontal.edit-user[ role="form" name="reviewForm" ng-controller="JewelsCtrl as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(jewel)" novalidate]
     blockquote
       div
         b  Stars: {{reviewCtrl.review.stars}}
@@ -25,7 +25,7 @@ section.row
       label.col-md-2.control-label.col-md-offset-2[for="stars"]
         Rating
       .col-md-5
-        select.form-control.input-medium[ng-model="reviewCtrl.review.stars" ng-options="stars for stars in [5,4,3,2,1]"]
+        select.form-control.input-medium[ng-model="reviewCtrl.review.stars" ng-options="stars for stars in [5,4,3,2,1]" required]
           option[value=""]
             |
               Your Gem Rating
@@ -33,12 +33,14 @@ section.row
       label.col-md-2.control-label.col-md-offset-2[for="review"]
         Comment
       .col-md-7
-        textarea.form-control.input-large[ng-model="reviewCtrl.review.body"]
+        textarea.form-control.input-large[ng-model="reviewCtrl.review.body" required]
     .form-group
       label.col-md-2.control-label.col-md-offset-2  by:
         
       .col-md-5
-        input.form-control.input-large[ng-model="reviewCtrl.review.author" type="email"]
+        input.form-control.input-large[ng-model="reviewCtrl.review.author" type="email" required]
     .form-group
       .col-md-offset-4.col-md-3
         input.btn.btn-primary [type="submit" value="Submit"]
+    div
+      | Review Form is {{reviewForm.$valid}}
