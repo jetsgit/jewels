@@ -17,9 +17,9 @@ jewelsStore.config(['RestangularProvider', '$stateProvider', '$urlRouterProvider
       'reviewsForm@home':
         templateUrl: 'reviews/reviewsForm.html'
         controller: 'JewelsCtrl'
-      'panelTabs@home':
-        templateUrl: 'panelTabs/panelTabs.html'
-        controller: 'PanelCtrl'
+      # 'panelTabs@home':
+      #   templateUrl: 'panelTabs/panelTabs.html'
+      #   controller: 'PanelCtrl'
   )
   $stateProvider.state("jewels",
     url: "/jewels"
@@ -45,4 +45,16 @@ jewelsStore.directive('jewelsDescription', ->
 jewelsStore.directive('jewelsSpecs', ->
   restrict: 'E'
   templateUrl: 'jewels/jewelsSpecs.html'
+)
+jewelsStore.directive('panelTabs', ->
+  restrict: 'E'
+  templateUrl: 'panelTabs/panelTabs.html'
+  controller: ->
+    this.tab = 1
+    this.selectTab = (setTab) ->
+      this.tab = setTab
+    this.isSelected = (checkTab) ->
+      this.tab == checkTab
+    return
+  controllerAs: 'panel'
 )
