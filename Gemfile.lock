@@ -113,7 +113,7 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
-    pg (0.18.4)
+    pg (0.20.0)
     pkg-config (1.1.7)
     poltergeist (1.10.0)
       capybara (~> 2.1)
@@ -249,7 +249,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   ng-rails-csrf
-  pg (~> 0.15)
+  pg (~> 0.20)
   poltergeist
   pry-byebug
   pry-rails
