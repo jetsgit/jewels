@@ -17,11 +17,11 @@ do ->
     restrict: 'E'
     templateUrl: 'panelTabs/panelTabs.html'
     controller: ->
-      this.tab = 1
-      this.selectTab = (setTab) ->
-        this.tab = setTab
-      this.isSelected = (checkTab) ->
-        this.tab == checkTab
+      @tab = 1
+      @selectTab = (setTab) ->
+        @tab = setTab
+      @isSelected = (checkTab) ->
+        @tab == checkTab
       return
     controllerAs: 'panel'
   )
