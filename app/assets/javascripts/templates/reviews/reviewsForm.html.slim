@@ -5,9 +5,16 @@ section.row
     li[ng-repeat="review in jewel.reviews"]
       blockquote
         strong 
-          | 
-            {{review.stars}} Stars<br>
+          |
+        span ng-repeat="n in [].constructor(review.stars) track by $index" style='color: #CC9F0A'
+          |
+            &starf; 
+        span style='color: #000'
+          |
+        br 
+          |
             {{review.body}}
+        
         cite.clearfix —{{review.author}}
   form.form-horizontal.edit-user[ role="form" name="reviewForm" ng-controller="JewelsCtrl as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(jewel)" novalidate]
     blockquote
